@@ -1,0 +1,30 @@
+{% extends "template.html" %}
+
+
+{% block title %}Player's Page{% endblock %}
+
+{% block content %}
+
+	<table>
+		<thead>
+			<td>Data</td>
+			<td>Posicao</td>
+			<td>Jogador</td>
+		</thead>
+		<tbody>
+			{% for ranking in rankings %}
+			<td>{{ raking.date }} </td>
+			<td>{{ raking.position }} </td>
+			<td>{{ raking.player.name }} </td>
+			{% endfor %}
+		</tbody>
+	</table>	
+
+	<form action="/newRanking" method="post">
+	  <div><input type="text" name="position"></input></div>
+	  <div><input type="text" name="data"></input></div>
+	  <div><input type="text" name="name"></input></div>
+	  <div><input type="text" name="email"></input></div>
+	  <div><input type="submit" value="Insert Ranking"></div>
+	</form>
+{% endblock %}
