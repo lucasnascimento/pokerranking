@@ -1,30 +1,45 @@
 {% extends "template.html" %}
 
-{% block title %}Ranking's Page{% endblock %}
+{% block title %}Ranking de Classificação{% endblock %}
 
 {% block content %}
 
-	<table >
+<style>
+	body { font-size: 62.5%; }
+	label, input { display:block; }
+	input.text { margin-bottom:12px; width:95%; padding: .4em; }
+	fieldset { padding:0; border:0; margin-top:25px; }
+	h1 { font-size: 1.2em; margin: .6em 0; }
+	div#classifications-contain { width: 100%; margin: 20px 0; }
+	div#classifications-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+	div#classifications-contain table td, div#classifications-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+	.ui-dialog .ui-state-error { padding: .3em; }
+	.validateTips { border: 1px solid transparent; padding: 0.3em; }
+</style>
+<a href='/processRanking'>Processar Ranking</a>
+<div id="classifications-contain" class="ui-widget">
+	<h1>Ranking de Classificação</h1>
+	<table id="classifications" class="ui-widget ui-widget-content">
 		<thead>
-			<td>Data</td>
-			<td>Posicao</td>
+		<tr class="ui-widget-header ">
+			<td/>
+			<td>Posição</td>
 			<td>Jogador</td>
+			<td>Pontos</td>
+		</tr>	
 		</thead>
 		<tbody>
-			{% for ranking in rankings %}
+			{% for rankinkg in rankings %}
 			<tr>
-				<td>{{ ranking.date }} </td>
-				<td>{{ ranking.position }} </td>
-				<td>{{ ranking.name }} </td>
+				<td>
+					<a href='/classification?opt=byPlayer&player={{ rankinkg.player }}'> Ver Classificações </a>
+				<td/>
+				<td>{{ rankinkg.player }} </td>
+				<td>{{ rankinkg.points }} </td>
 			</tr>
 			{% endfor %}
 		</tbody>
 	</table>	
+</div>
 
-	<form action="/ranking" method="post">
-	  <div><input type="text" name="position"></input></div>
-	  <div><input type="text" name="data"></input></div>
-	  <div><input type="text" name="name"></input></div>
-	  <div><input type="submit" value="Insert Ranking"></div>
-	</form>
 {% endblock %}

@@ -1,18 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
 <head>
-    <link rel="stylesheet" href="style.css" />
-    <title>{% block title %}Poker do Nasci{% endblock %}</title>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+	<link rel="stylesheet" href="style.css" />
+	<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.4.custom.css" rel="Stylesheet" />	
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.4.custom.min.js"></script>	
+	<title>{% block title %}Poker do Nasci{% endblock %}</title>
 </head>
 
 <body>
+	<script language="javascript">
+		$(document).ready(function(){
+			$( "button, input:submit, a" ).button();
+			//$( "a" ).click(function() { return false; });
+	    });
+	</script>
+
     <div id="sidebar">
         {% block sidebar %}
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/player/">Player's Page</a></li>
-        </ul>
+		<a href="/">Ranking de Classificação</a>
+        <a href="/classification">Classificação dos Jogadores nas Partidas</a>
         {% endblock %}
     </div>
 
