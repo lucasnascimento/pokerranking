@@ -1,6 +1,6 @@
-{% extends "template.html" %}
+ï»¿{% extends "template.html" %}
 
-{% block title %}Ranking de Classificação{% endblock %}
+{% block title %}Ranking de ClassificaÃ§Ã£o{% endblock %}
 
 {% block content %}
 
@@ -18,12 +18,12 @@
 </style>
 <a href='/processRanking'>Processar Ranking</a>
 <div id="classifications-contain" class="ui-widget">
-	<h1>Ranking de Classificação</h1>
+	<h1>Ranking de ClassificaÃ§Ã£o</h1>
 	<table id="classifications" class="ui-widget ui-widget-content">
 		<thead>
 		<tr class="ui-widget-header ">
 			<td/>
-			<td>Posição</td>
+			<td>PosiÃ§Ã£o</td>
 			<td>Jogador</td>
 			<td>Pontos</td>
 		</tr>	
@@ -32,8 +32,8 @@
 			{% for rankinkg in rankings %}
 			<tr>
 				<td>
-					<a href='/classification?opt=byPlayer&player={{ rankinkg.player }}'> Ver Classificações </a>
-				<td/>
+					<a href='/classification?opt=byPlayer&player={{ rankinkg.player }}'> Ver ClassificaÃ§Ãµes </a>
+				<td>{{ forloop.counter }} </td>
 				<td>{{ rankinkg.player }} </td>
 				<td>{{ rankinkg.points }} </td>
 			</tr>

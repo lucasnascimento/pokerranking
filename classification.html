@@ -1,6 +1,6 @@
-{% extends "template.html" %}
+Ôªø{% extends "template.html" %}
 
-{% block title %}ManutenÁ„o das ClassificaÁıes{% endblock %}
+{% block title %}Manuten√ß√£o das Classifica√ß√µes{% endblock %}
 
 {% block content %}
 
@@ -27,12 +27,12 @@
 	.validateTips { border: 1px solid transparent; padding: 0.3em; }
 </style>
 
-<button id="newClassification">Nova ClassificaÁ„o</button>
-<div id="dialog-form" title="Nova ClassificaÁ„o">
+<button id="newClassification">Nova Classifica√ß√£o</button>
+<div id="dialog-form" title="Nova Classifica√ß√£o">
 	<p class="validateTips">Todos campos requeridos.</p>	
 	<form action="/classification" method="post">
 		<fieldset>
-			<label for="position">PosiÁ„o</label>
+			<label for="position">Posi√ß√£o</label>
 			<select name='position' id='position' class="text ui-widget-content ui-corner-all">
 				<option value="1">1</option>
 				<option value="2">2</option>
@@ -49,18 +49,18 @@
 			<input type="text" name="date" id='date' class="text ui-widget-content ui-corner-all"/>
 			<label for="player">Jogador</label>
 			<input type="text" name="player" id='player' class="text ui-widget-content ui-corner-all"/>
-			<input type="submit" value="Inclui ClassificaÁ„o"/>
+			<input type="submit" value="Inclui Classifica√ß√£o"/>
 		</fieldset>
 	</form>
 </div>
 
 <div id="classifications-contain" class="ui-widget">
-	<h1>Classificacoes Existentes: </h1>
+	<h1>Classifica√ß√µes Existentes: </h1>
 	<table id="classifications" class="ui-widget ui-widget-content">
 		<thead>
 		<tr class="ui-widget-header ">
 			<td>Data</td>
-			<td>Posicao</td>
+			<td>Posi√ß√£o</td>
 			<td>Jogador</td>
 			<td/>
 		</tr>	
